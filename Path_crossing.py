@@ -14,8 +14,23 @@ Input: path = "NESWW"
 Output: true
 Explanation: Notice that the path visits the origin twice.
 '''
-#----my soln--- 
-#45/81 test cases passed
+class Solution:
+    def isPathCrossing(self, path):
+        x, y = 0, 0
+        visited = {(0, 0)}
+
+        for direction in path:
+            x += 1 if direction == 'E' else (-1 if direction == 'W' else 0)
+            y += 1 if direction == 'N' else (-1 if direction == 'S' else 0)
+
+            if (x, y) in visited:
+                return True
+
+            visited.add((x, y))
+
+        return False
+'''----my soln--- 
+45/81 test cases passed
 class Solution(object):
     def isPathCrossing(self, path):
         """
@@ -40,11 +55,7 @@ class Solution(object):
             return False
         else:
             if val<=0:
-                return True
-
-
-        
-        
+                return True'''        
 
 
         
