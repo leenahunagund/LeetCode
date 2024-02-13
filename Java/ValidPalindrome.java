@@ -18,3 +18,11 @@ Input: s = " "
 Output: true
 Explanation: s is an empty string "" after removing non-alphanumeric characters.
 Since an empty string reads the same forward and backward, it is a palindrome.*/
+class Solution {
+    public boolean isPalindrome(String s) {
+        s=s.replaceAll("[^A-Za-z0-9]","").toLowerCase();
+        s=s.trim();
+		StringBuilder r=new StringBuilder(s).reverse();
+        return (s.equals(r.toString()));
+    }
+}
